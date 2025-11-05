@@ -1,91 +1,182 @@
-# SquaredSymbol.com
+# Image Size Finder
 
-一个专注于平方符号 (²) 的极简、快速站点：一键复制、输入方法、使用示例与符号库。
+A free online tool to instantly check image dimensions, file size, resolution, MIME type, and metadata. Built with privacy in mind - all processing happens in your browser.
 
-## 站点概览
+## ✨ Features
 
-- **首页** `/`：复制 ²、输入方法、用途与 FAQ
-- **符号库** `/symbols`：常用数学/物理/化学符号快速复制
-- **关于** `/about`：项目简介与联系方式
-- **隐私政策** `/privacy-policy`
-- **服务条款** `/terms`
+- 🖼️ **Instant Analysis**: Get image dimensions, file size, and metadata in seconds
+- 🔒 **Privacy First**: All processing happens locally in your browser - no uploads
+- 🌍 **Multi-Language**: Support for English, Chinese (简体中文), Japanese (日本語), and Spanish (Español)
+- 🎨 **Dark Mode**: Beautiful light and dark themes with auto-detection
+- 📱 **Responsive**: Works perfectly on desktop, tablet, and mobile devices
+- 🚀 **Fast & Free**: No registration, no fees, instant results
+- 🎯 **All Formats**: Supports PNG, JPEG, WebP, GIF, SVG, BMP, and more
 
-## 特性
+## 🛠️ Tech Stack
 
-- 现代化 UI + 响应式设计（Tailwind CSS）
-- 一键复制平方符号 (²) 与上标字符
-- 全局导航与页脚由 `RootLayout` 提供，页面一致性强
-- 完整 SEO：`metadata`、OG/Twitter、`/sitemap.xml`、`/robots.txt`、Canonical、结构化数据
-- 已接入 Google Analytics（gtag.js，生产环境）
-- 基于 Next.js 15 + TypeScript，部署到 Vercel
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Font**: Inter (Google Fonts)
+- **Deployment**: Vercel-ready
 
-## 技术栈
+## 📋 What Information Does It Show?
 
-- 框架：Next.js 15
-- 语言：TypeScript
-- 样式：Tailwind CSS
-- 字体：Geist Sans / Geist Mono
-- 部署：Vercel
+- File name
+- Dimensions (width × height) in pixels, inches, and centimeters
+- File size (KB/MB)
+- Total pixels (megapixels)
+- Aspect ratio
+- MIME type
+- Last modified date
 
-## 开发与脚本
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ or compatible JavaScript runtime
+- npm, pnpm, or yarn
+
+### Installation
 
 ```bash
-# 安装依赖（任选其一）
+# Clone the repository
+git clone https://github.com/yourusername/image-size-finder.git
+cd image-size-finder
+
+# Install dependencies
 npm install
-# 或 pnpm install / yarn install
+# or
+pnpm install
+# or
+yarn install
+```
 
-# 启动开发服务器（默认 http://localhost:3000 ）
+### Development
+
+```bash
+# Start the development server
 npm run dev
+# or
+pnpm dev
+# or
+yarn dev
+```
 
-# 构建生产版本
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+# Build the application
 npm run build
 
-# 本地启动生产构建
+# Start the production server
 npm start
 ```
 
-## SEO 与分析
+## 📁 Project Structure
 
-- 首页 meta 描述已围绕关键词 “Squared Symbol” 优化
-- Open Graph / Twitter Card 已配置
-- 站点地图：`/src/app/sitemap.ts`（覆盖 `/`, `/symbols`, `/about`, `/privacy-policy`, `/terms`）
-- 结构化数据：`/src/app/structured-data.tsx`
-- GA：在 `src/app/layout.tsx` 通过 `next/script` 注入
-
-```tsx
-// 片段：src/app/layout.tsx
-<Script src="https://www.googletagmanager.com/gtag/js?id=G-FQYENBZ518" strategy="afterInteractive" />
-<Script id="gtag-init" strategy="afterInteractive">{`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
-  gtag('config', 'G-FQYENBZ518');
-`}</Script>
+```
+src/
+├── app/
+│   ├── about/                 # About page
+│   ├── components/            # Shared components
+│   │   ├── SiteHeader.tsx
+│   │   └── SiteFooter.tsx
+│   ├── privacy-policy/        # Privacy policy page
+│   ├── terms/                 # Terms of service page
+│   ├── globals.css            # Global styles
+│   ├── layout.tsx             # Root layout with SEO
+│   ├── page.tsx               # Home page (main tool)
+│   ├── robots.ts              # Robots.txt configuration
+│   ├── sitemap.ts             # Sitemap configuration
+│   └── structured-data.tsx    # JSON-LD structured data
+├── components/
+│   ├── I18nProvider.tsx       # Internationalization provider
+│   ├── LanguageSwitcher.tsx   # Language selector
+│   └── ThemeSwitcher.tsx      # Theme toggle
+├── hooks/
+│   └── useI18n.ts             # i18n hook
+└── lib/
+    └── i18n.ts                # Translation definitions
 ```
 
-## 目录结构（关键）
+## 🌍 Internationalization (i18n)
 
-- `src/app/layout.tsx`：全局布局、导航、页脚、META、GA
-- `src/app/page.tsx`：首页
-- `src/app/symbols/page.tsx`：符号库
-- `src/app/about/page.tsx`：关于
-- `src/app/privacy-policy/page.tsx`：隐私政策
-- `src/app/terms/page.tsx`：服务条款
-- `src/app/sitemap.ts`：站点地图
-- `src/app/robots.ts`：Robots
-- `src/app/components/`：`SiteHeader`、`SiteFooter`
+The app supports 4 languages out of the box:
+- English (en)
+- 简体中文 (zh)
+- 日本語 (ja)
+- Español (es)
 
-## 部署到 Vercel（推荐）
+Add or modify translations in `src/lib/i18n.ts`.
 
-1. 推送仓库到 GitHub/GitLab/Bitbucket
-2. 在 Vercel 导入项目，一键部署
-3. 绑定域名 `squaredsymbol.com`
-4. 部署完成后访问 `https://squaredsymbol.com`
+## 🎨 Themes
 
-## 许可证
+The app includes:
+- Light mode
+- Dark mode
+- Auto mode (follows system preference)
 
-MIT License
+Theme preference is saved in browser's local storage.
+
+## 🔐 Privacy & Security
+
+- **No server uploads**: All image processing happens client-side using JavaScript File API
+- **No data collection**: Images never leave your device
+- **Local storage only**: Only language and theme preferences are stored locally
+- **No cookies**: (except analytics if enabled)
+
+## 📊 SEO Features
+
+- Complete meta tags (title, description, keywords)
+- Open Graph tags for social media
+- Twitter Card support
+- JSON-LD structured data (WebApplication, FAQ, Organization schemas)
+- Multi-language sitemap
+- Robots.txt configuration
+- Canonical URLs
+
+## 📈 Analytics
+
+Google Analytics is integrated for basic usage tracking. You can:
+- Remove it by deleting the GA scripts in `src/app/layout.tsx`
+- Replace with your own GA ID
+- Use an alternative analytics service
+
+## 🚢 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Import your project in Vercel
+3. Configure your domain (e.g., `imagesizefinder.org`)
+4. Deploy!
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+### Other Platforms
+
+This is a standard Next.js app and can be deployed to:
+- Netlify
+- Cloudflare Pages
+- AWS Amplify
+- Any Node.js hosting
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+MIT License - feel free to use this project for any purpose.
+
+## 📧 Contact
+
+- Email: hello@imagesizefinder.org
+- Website: https://imagesizefinder.org
 
 ---
 
-© 2025 SquaredSymbol.com. All rights reserved.
+© 2025 Image Size Finder. All rights reserved.

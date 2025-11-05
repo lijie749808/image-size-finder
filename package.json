@@ -1,6 +1,6 @@
 {
-  "name": "squaredsymbol",
-  "version": "0.1.0",
+  "name": "image-size-finder",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

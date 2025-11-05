@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/',
+      disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://squaredsymbol.com/sitemap.xml',
+    sitemap: 'https://imagesizefinder.org/sitemap.xml',
   }
 }

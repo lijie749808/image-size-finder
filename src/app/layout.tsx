@@ -1,49 +1,47 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import StructuredData from "./structured-data";
-import SiteHeader from "./components/SiteHeader";
-import SiteFooter from "./components/SiteFooter";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Squared Symbol (²) - Copy, Type & Use Superscript 2 Symbol",
-  // 149 characters, includes target keyword "Squared Symbol"
-  description: "Copy the Squared Symbol (²) instantly and learn fast ways to type it on Windows, Mac and mobile. Clear guides, examples, and a quick symbol library for daily use.",
-  keywords: "Squared Symbol, superscript 2, ², mathematical symbols, copy squared symbol, type squared symbol, superscript characters, math symbols, Unicode U+00B2",
-  authors: [{ name: "SquaredSymbol" }],
-  creator: "SquaredSymbol",
-  publisher: "SquaredSymbol",
+  title: "Image Size Finder - Check Image Dimensions, File Size & Info",
+  description: "Free online tool to instantly find image dimensions (width × height), file size, resolution, MIME type, and metadata.",
+  keywords: "image size finder, image dimensions, check image size, picture size finder",
+  authors: [{ name: "Image Size Finder" }],
+  creator: "Image Size Finder",
+  publisher: "Image Size Finder",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://squaredsymbol.org'),
+  metadataBase: new URL('https://imagesizefinder.org'),
   alternates: {
-    canonical: 'https://squaredsymbol.org/',
+    canonical: 'https://imagesizefinder.org/',
+    languages: {
+      'en': 'https://imagesizefinder.org/',
+      'zh': 'https://imagesizefinder.org/zh/',
+      'ja': 'https://imagesizefinder.org/ja/',
+      'es': 'https://imagesizefinder.org/es/',
+    },
   },
   openGraph: {
-    title: "Squared Symbol (²) - Copy, Type & Use Superscript 2 Symbol",
-    description: "Copy the Squared Symbol (²) instantly and learn fast ways to type it on Windows, Mac and mobile. Clear guides, examples, and a quick symbol library for daily use.",
-    url: 'https://squaredsymbol.org',
-    siteName: 'SquaredSymbol',
+    title: "Image Size Finder - Check Image Dimensions, File Size & Info Online",
+    description: "Free online tool to instantly find image dimensions (width × height), file size, resolution, MIME type, and metadata. Works with PNG, JPEG, WebP, GIF.",
+    url: 'https://imagesizefinder.org',
+    siteName: 'Image Size Finder',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Squared Symbol (²) - Mathematical Symbol Guide',
+        alt: 'Image Size Finder - Online Image Analyzer',
       },
     ],
     locale: 'en_US',
@@ -51,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Squared Symbol (²) - Copy, Type & Use Superscript 2 Symbol",
-    description: "Copy the Squared Symbol (²) instantly and learn fast ways to type it on Windows, Mac and mobile. Clear guides, examples, and a quick symbol library for daily use.",
+    title: "Image Size Finder - Check Image Dimensions, File Size & Info Online",
+    description: "Free online tool to instantly find image dimensions, file size, resolution, and metadata. Works with all image formats.",
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -80,9 +78,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#3B82F6" />
-        <link rel="icon" href="/favicon.ico?v=1" />
+        <meta name="theme-color" content="#3B82F6" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1E293B" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/favicon.ico?v=2" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FQYENBZ518"
           strategy="afterInteractive"
@@ -94,11 +96,8 @@ export default function RootLayout({
           gtag('config', 'G-FQYENBZ518');
         `}</Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <StructuredData />
-        <SiteHeader />
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
-        <SiteFooter />
       </body>
     </html>
   );
