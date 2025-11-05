@@ -86,14 +86,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-FQYENBZ518"
+          src="https://www.googletagmanager.com/gtag/js?id=G-JEM3LVCJH7"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);} 
           gtag('js', new Date());
-          gtag('config', 'G-FQYENBZ518');
+          gtag('config', 'G-JEM3LVCJH7');
         `}</Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
