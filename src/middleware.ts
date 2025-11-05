@@ -2,28 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 const locales = ['zh', 'ja', 'es'];
-const defaultLocale = 'en';
-
-// Get locale from pathname (e.g., /zh/about -> zh)
-function getLocaleFromPathname(pathname: string): string | null {
-  const segments = pathname.split('/');
-  const firstSegment = segments[1];
-  
-  if (locales.includes(firstSegment)) {
-    return firstSegment;
-  }
-  
-  return null;
-}
-
-// Remove locale from pathname (e.g., /zh/about -> /about)
-function removeLocaleFromPathname(pathname: string): string {
-  const locale = getLocaleFromPathname(pathname);
-  if (locale) {
-    return pathname.replace(`/${locale}`, '') || '/';
-  }
-  return pathname;
-}
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;

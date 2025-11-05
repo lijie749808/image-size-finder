@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import I18nProvider from "@/components/I18nProvider";
 import { Locale, locales, defaultLocale } from "@/lib/i18n-config";
 import { getDictionary } from "@/lib/get-dictionary";
+import DefaultLayout from '@/components/layouts/DefaultLayout';
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ lang: Locale }[]> {
   // Generate params for all non-default locales
   return locales.filter(locale => locale !== defaultLocale).map((locale) => ({
-    lang: locale,
+    lang: locale as Locale,
   }));
 }
 
@@ -79,14 +79,12 @@ export default async function LangLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  // Import the layout component dynamically
-  const DefaultLayout = require('@/components/layouts/DefaultLayout').default;
   
   return (
-    <DefaultLayout lang={lang}>
+    <DefaultLayout lang={lang as Locale}>
       {children}
     </DefaultLayout>
   );

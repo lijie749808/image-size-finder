@@ -1,7 +1,7 @@
 'use client';
 
 import { useI18n } from '@/hooks/useI18n';
-import { Locale, localeNames, locales } from '@/lib/i18n';
+import { localeNames, locales } from '@/lib/i18n';
 import { useState, useRef, useEffect } from 'react';
 
 export default function LanguageSwitcher() {

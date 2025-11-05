@@ -3,7 +3,7 @@
 import { useI18n } from '@/hooks/useI18n';
 
 export default function StructuredData() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   
   const webAppSchema = {
     "@context": "https://schema.org",
@@ -34,34 +34,34 @@ export default function StructuredData() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": t('faq1Q'),
+        "name": t('faq1Question'),
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": t('faq1A')
+          "text": t('faq1Answer')
         }
       },
       {
         "@type": "Question",
-        "name": t('faq2Q'),
+        "name": t('faq2Question'),
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": t('faq2A')
+          "text": t('faq2Answer')
         }
       },
       {
         "@type": "Question",
-        "name": t('faq3Q'),
+        "name": t('faq3Question'),
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": t('faq3A')
+          "text": t('faq3Answer')
         }
       },
       {
         "@type": "Question",
-        "name": t('faq4Q'),
+        "name": t('faq4Question'),
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": t('faq4A')
+          "text": t('faq4Answer')
         }
       }
     ]

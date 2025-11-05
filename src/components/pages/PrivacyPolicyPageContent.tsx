@@ -22,7 +22,7 @@ export default function PrivacyPolicyPageContent() {
                 Introduction
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
-                Image Size Finder ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our image analysis tool.
+                Image Size Finder (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our image analysis tool.
               </p>
             </div>
 
@@ -89,10 +89,10 @@ export default function PrivacyPolicyPageContent() {
                 Your Rights
               </h2>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                Since we don't collect or store your images or personal data on our servers, there is no personal data for us to delete, modify, or export. You have full control over:
+                Since we don&apos;t collect or store your images or personal data on our servers, there is no personal data for us to delete, modify, or export. You have full control over:
               </p>
               <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-2">
-                <li>Clearing your browser's local storage</li>
+                <li>Clearing your browser&apos;s local storage</li>
                 <li>Disabling cookies in your browser</li>
                 <li>Using browser privacy features or extensions</li>
               </ul>

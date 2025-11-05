@@ -19,7 +19,7 @@ export default function AboutPageContent() {
                 What is Image Size Finder?
               </h2>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                Image Size Finder is a free online tool that helps you quickly check image dimensions, file size, resolution, and other important metadata. Whether you're a web developer, designer, photographer, or just someone who needs to verify image specifications, our tool makes it simple and fast.
+                Image Size Finder is a free online tool that helps you quickly check image dimensions, file size, resolution, and other important metadata. Whether you&apos;re a web developer, designer, photographer, or just someone who needs to verify image specifications, our tool makes it simple and fast.
               </p>
               <p className="text-slate-600 dark:text-slate-300">
                 All processing happens directly in your browser using JavaScript - your images are never uploaded to any server, ensuring complete privacy and security.
@@ -69,7 +69,7 @@ export default function AboutPageContent() {
                 Contact Us
               </h2>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                Have questions, suggestions, or feedback? We'd love to hear from you!
+                Have questions, suggestions, or feedback? We&apos;d love to hear from you!
               </p>
               <p className="text-slate-600 dark:text-slate-300">
                 Email: <a href="mailto:hello@imagesizefinder.org" className="text-blue-600 dark:text-blue-400 hover:underline">hello@imagesizefinder.org</a>

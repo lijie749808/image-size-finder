@@ -1,6 +1,7 @@
 'use client';
 
 import { useI18n } from '@/hooks/useI18n';
+import Link from 'next/link';
 
 export default function TermsPageContent() {
   const { t } = useI18n();
@@ -22,7 +23,7 @@ export default function TermsPageContent() {
                 Agreement to Terms
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
-                By accessing and using Image Size Finder ("the Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use the Service.
+                By accessing and using Image Size Finder (&quot;the Service&quot;), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use the Service.
               </p>
             </div>
 
@@ -55,7 +56,7 @@ export default function TermsPageContent() {
                 <li>Collect personal information from image metadata</li>
               </ul>
               <p className="text-slate-600 dark:text-slate-300 mt-4">
-                Please refer to our <a href="/privacy-policy" className="text-blue-600 dark:text-blue-400 hover:underline">Privacy Policy</a> for more details.
+                Please refer to our <Link href="/privacy-policy" className="text-blue-600 dark:text-blue-400 hover:underline">Privacy Policy</Link> for more details.
               </p>
             </div>
 
@@ -80,7 +81,7 @@ export default function TermsPageContent() {
                 Disclaimer of Warranties
               </h2>
               <p className="text-slate-600 dark:text-slate-300 mb-4">
-                The Service is provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, either express or implied, including but not limited to:
+                The Service is provided &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; without any warranties of any kind, either express or implied, including but not limited to:
               </p>
               <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-2">
                 <li>Accuracy of results</li>
